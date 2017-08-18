@@ -1,5 +1,8 @@
 package ex01;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestLivre {
 
 	public static String[] auteurs = {"BASSO", "BERTRAND", "BONNET", "CELIKBAS", "DELPECHE", 
@@ -14,14 +17,45 @@ public class TestLivre {
 	
 	public static void main(String[] args) {
 		// TODO 1. Modifier la classe Livre afin de respecter les règles de l'encapsulation
+		
+		
+		//--> ajouter getters and setters		
+		
+		
 		// TODO 2. Mettre en place un constructeur dans la classe Livre qui prend en paramètres: l'année, l'auteur, le nom, la salle
+		// -->on génère un constructeur en utilisant la fonction automatique de STS; fait aussi manuellement.
+		
+		
 		// TODO 3. Dans cette classe TestLivre, instanciez une ArrayList de Livre. Mettre 12 livres dans cette liste:
 		//         Chaque livre sera instancié à partir des informations dans les tableaux ci-dessus. 
-
+		
+		
+		List<Livre> listLivre = new ArrayList<Livre>(12); //on crée une nouvelle liste de livres de taille 12
+		for (int i = 0 ; i < annees.length; i++) { //on fait une boucle for, "traditionnelle car les tableaux de base sont [], qui parcourt nos tableaux
+			Livre unLivre= new Livre(annees[i], nomsLivres[i], auteurs[i], salles[(int) (Math.random()*3)]); // on crée un objet Livre avec les paramètres du contructeur
+			
+		listLivre.add(unLivre); //on ajoute ce nouveau livre à notre liste listLivre
+		
+		}
+		System.out.println(listLivre); //fait pour voir la liste
+		
+		
 		// TODO 4. Créer une classe LivreServices
-		// TODO 5. Dans la classe LivreServices, metrre en place une méthode qui prend en paramètre une liste de livres
-		//         et qui retourne la liste des livres parus entre 2 années
+		// TODO 5. Dans la classe LivreServices, mettre en place une méthode qui prend en paramètre une liste de livres		
+	    //         et qui retourne la liste des livres parus entre 2 années
+		LivreServices a = new LivreServices(); // permet d'instancier un nouvel objet "a" de type LivreServices
+		
+		System.out.println(a.triLivre( listLivre, 2009, 2013)); //permet de retourner sur la console la liste des livres paru entre 2009 et 2013		
+		
+		
 		// TODO 6. Se servir de cette méthode pour afficher la liste des livres parus entre 2010 et 2014 et ceux parus entre 2015 et 2017
+		LivreServices b = new LivreServices();
+		
+		List<Livre> premierTri = b.triLivre(listLivre, 2010, 2014);
+		System.out.println(premierTri);
+		
+		
+		
 		// TODO 7. Créer une méthode qui permet de rechercher les livres rangés dans une salle donnée.
 		// TODO 8. Extraire la liste des livres parus entre 2010 et 2015 rangés dans les salles 1 ou 2.
 		
