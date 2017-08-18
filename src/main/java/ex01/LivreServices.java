@@ -16,5 +16,14 @@ public class LivreServices {
 		return listTriEntreDeuxAnnees;
 
 	}
+	public List<Livre> triSalle(List<Livre> listLivre, int salle) {
 
+		List<Livre> listTriParSalle = new ArrayList<Livre>();
+		for (Livre j : listLivre) {
+			if (j.getSalle() == salle) {
+				listTriParSalle.add(j);
+			}
+		}
+		return listTriParSalle;
+	}
 }
