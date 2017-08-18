@@ -2,10 +2,10 @@ package ex01;
 
 public class Livre {
 
-	int annee;
-	String auteur;
-	String nom;
-	int salle;
+	private int annee;
+	private String auteur;
+	private String nom;
+	private int salle;
 
 	public Livre(int annee, String auteur, String nom, int salle) {
 		this.annee = annee;
